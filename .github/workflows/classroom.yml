@@ -1,7 +1,5 @@
 name: Autograding Tests
-'on':
-- push
-- repository_dispatch
+'on': {}
 permissions:
   checks: write
   actions: read
@@ -22,6 +20,8 @@ jobs:
         test-name: testProductName
         setup-command: ''
         command: gradle test --tests ProductTest.testProductName
+        timeout: 2
+        max-score: 1
 
     - name: testProductPrice
       id: testproductprice
@@ -30,6 +30,8 @@ jobs:
         test-name: testProductPrice
         setup-command: ''
         command: gradle test --tests ProductTest.testProductPrice
+        timeout: 2
+        max-score: 1
 
     - name: testProductDescription
       id: testproductdescription
@@ -38,6 +40,8 @@ jobs:
         test-name: testProductDescription
         setup-command: ''
         command: gradle test --tests ProductTest.testProductDescription
+        timeout: 2
+        max-score: 1
 
     - name: testProductDiscountedPrice
       id: testproductdiscountedprice
@@ -46,6 +50,8 @@ jobs:
         test-name: testProductDiscountedPrice
         setup-command: ''
         command: gradle test --tests ProductTest.testProductDiscountedPrice
+        timeout: 2
+        max-score: 1
 
     - name: testSetProductName
       id: testsetproductname
@@ -54,6 +60,8 @@ jobs:
         test-name: testSetProductName
         setup-command: ''
         command: gradle test --tests ProductTest.testSetProductName
+        timeout: 2
+        max-score: 1
 
     - name: testSetProductPrice
       id: testsetproductprice
@@ -62,6 +70,8 @@ jobs:
         test-name: testSetProductPrice
         setup-command: ''
         command: gradle test --tests ProductTest.testSetProductPrice
+        timeout: 2
+        max-score: 1
 
     - name: testSetProductDescription
       id: testsetproductdescription
@@ -70,6 +80,8 @@ jobs:
         test-name: testSetProductDescription
         setup-command: ''
         command: gradle test --tests ProductTest.testSetProductDescription
+        timeout: 2
+        max-score: 1
 
     # Clothing tests
     - name: testClothingName
@@ -79,6 +91,8 @@ jobs:
         test-name: testClothingName
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingName
+        timeout: 2
+        max-score: 1
 
     - name: testClothingPrice
       id: testclothingprice
@@ -87,6 +101,8 @@ jobs:
         test-name: testClothingPrice
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingPrice
+        timeout: 2
+        max-score: 1
 
     - name: testClothingDescription
       id: testclothingdescription
@@ -95,6 +111,8 @@ jobs:
         test-name: testClothingDescription
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingDescription
+        timeout: 2
+        max-score: 1
 
     - name: testClothingSize
       id: testclothingsize
@@ -103,6 +121,8 @@ jobs:
         test-name: testClothingSize
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingSize
+        timeout: 2
+        max-score: 1
 
     - name: testClothingMaterial
       id: testclothingmaterial
@@ -111,6 +131,8 @@ jobs:
         test-name: testClothingMaterial
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingMaterial
+        timeout: 2
+        max-score: 1
 
     - name: testClothingDiscountedPriceForSmallOrMedium
       id: testclothingdiscountedpricesmallormedium
@@ -119,6 +141,8 @@ jobs:
         test-name: testClothingDiscountedPriceForSmallOrMedium
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingDiscountedPriceForSmallOrMedium
+        timeout: 2
+        max-score: 1
 
     - name: testClothingDiscountedPriceForLargeOrLarger
       id: testclothingdiscountedpricelargeorlarger
@@ -127,6 +151,8 @@ jobs:
         test-name: testClothingDiscountedPriceForLargeOrLarger
         setup-command: ''
         command: gradle test --tests ClothingTest.testClothingDiscountedPriceForLargeOrLarger
+        timeout: 2
+        max-score: 1
 
     - name: testSetClothingName
       id: testsetclothingname
@@ -135,6 +161,8 @@ jobs:
         test-name: testSetClothingName
         setup-command: ''
         command: gradle test --tests ClothingTest.testSetClothingName
+        timeout: 2
+        max-score: 1
 
     - name: testSetClothingPrice
       id: testsetclothingprice
@@ -143,6 +171,8 @@ jobs:
         test-name: testSetClothingPrice
         setup-command: ''
         command: gradle test --tests ClothingTest.testSetClothingPrice
+        timeout: 2
+        max-score: 1
 
     - name: testSetClothingDescription
       id: testsetclothingdescription
@@ -151,6 +181,8 @@ jobs:
         test-name: testSetClothingDescription
         setup-command: ''
         command: gradle test --tests ClothingTest.testSetClothingDescription
+        timeout: 2
+        max-score: 1
 
     - name: testSetClothingSize
       id: testsetclothingsize
@@ -159,6 +191,8 @@ jobs:
         test-name: testSetClothingSize
         setup-command: ''
         command: gradle test --tests ClothingTest.testSetClothingSize
+        timeout: 2
+        max-score: 1
 
     - name: testSetClothingMaterial
       id: testsetclothingmaterial
@@ -167,6 +201,8 @@ jobs:
         test-name: testSetClothingMaterial
         setup-command: ''
         command: gradle test --tests ClothingTest.testSetClothingMaterial
+        timeout: 2
+        max-score: 1
 
     # Electronic tests
     - name: testElectronicName
@@ -176,6 +212,8 @@ jobs:
         test-name: testElectronicName
         setup-command: ''
         command: gradle test --tests ElectronicTest.testElectronicName
+        timeout: 2
+        max-score: 1
 
     - name: testElectronicPrice
       id: testelectronicprice
@@ -184,6 +222,8 @@ jobs:
         test-name: testElectronicPrice
         setup-command: ''
         command: gradle test --tests ElectronicTest.testElectronicPrice
+        timeout: 2
+        max-score: 1
 
     - name: testElectronicDescription
       id: testelectronicdescription
@@ -192,6 +232,8 @@ jobs:
         test-name: testElectronicDescription
         setup-command: ''
         command: gradle test --tests ElectronicTest.testElectronicDescription
+        timeout: 2
+        max-score: 1
 
     - name: testElectronicWarrantyPeriod
       id: testelectronicwarrantyperiod
@@ -200,6 +242,8 @@ jobs:
         test-name: testElectronicWarrantyPeriod
         setup-command: ''
         command: gradle test --tests ElectronicTest.testElectronicWarrantyPeriod
+        timeout: 2
+        max-score: 1
 
     - name: testElectronicDiscountedPrice
       id: testelectronicdiscountedprice
@@ -208,6 +252,8 @@ jobs:
         test-name: testElectronicDiscountedPrice
         setup-command: ''
         command: gradle test --tests ElectronicTest.testElectronicDiscountedPrice
+        timeout: 2
+        max-score: 1
 
     - name: testSetElectronicName
       id: testsetelectronicname
@@ -216,6 +262,8 @@ jobs:
         test-name: testSetElectronicName
         setup-command: ''
         command: gradle test --tests ElectronicTest.testSetElectronicName
+        timeout: 2
+        max-score: 1
 
     - name: testSetElectronicPrice
       id: testsetelectronicprice
@@ -224,6 +272,8 @@ jobs:
         test-name: testSetElectronicPrice
         setup-command: ''
         command: gradle test --tests ElectronicTest.testSetElectronicPrice
+        timeout: 2
+        max-score: 1
 
     - name: testSetElectronicDescription
       id: testsetelectronicdescription
@@ -232,6 +282,8 @@ jobs:
         test-name: testSetElectronicDescription
         setup-command: ''
         command: gradle test --tests ElectronicTest.testSetElectronicDescription
+        timeout: 2
+        max-score: 1
 
     - name: testSetElectronicWarrantyPeriod
       id: testsetelectronicwarrantyperiod
@@ -240,6 +292,8 @@ jobs:
         test-name: testSetElectronicWarrantyPeriod
         setup-command: ''
         command: gradle test --tests ElectronicTest.testSetElectronicWarrantyPeriod
+        timeout: 2
+        max-score: 1
 
     # Polymorphism test
     - name: testPolymorphism
@@ -249,6 +303,8 @@ jobs:
         test-name: testPolymorphism
         setup-command: ''
         command: gradle test --tests PolymorphismTest.testPolymorphism
+        timeout: 2
+        max-score: 1
 
     # Autograding Reporter
     - name: Autograding Reporter
