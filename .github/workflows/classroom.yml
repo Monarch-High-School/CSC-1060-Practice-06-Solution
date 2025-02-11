@@ -1,0 +1,287 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Product tests
+    - name: testProductName
+      id: testproductname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testProductName
+        setup-command: ''
+        command: gradle test --tests ProductTest.testProductName
+
+    - name: testProductPrice
+      id: testproductprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testProductPrice
+        setup-command: ''
+        command: gradle test --tests ProductTest.testProductPrice
+
+    - name: testProductDescription
+      id: testproductdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testProductDescription
+        setup-command: ''
+        command: gradle test --tests ProductTest.testProductDescription
+
+    - name: testProductDiscountedPrice
+      id: testproductdiscountedprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testProductDiscountedPrice
+        setup-command: ''
+        command: gradle test --tests ProductTest.testProductDiscountedPrice
+
+    - name: testSetProductName
+      id: testsetproductname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetProductName
+        setup-command: ''
+        command: gradle test --tests ProductTest.testSetProductName
+
+    - name: testSetProductPrice
+      id: testsetproductprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetProductPrice
+        setup-command: ''
+        command: gradle test --tests ProductTest.testSetProductPrice
+
+    - name: testSetProductDescription
+      id: testsetproductdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetProductDescription
+        setup-command: ''
+        command: gradle test --tests ProductTest.testSetProductDescription
+
+    # Clothing tests
+    - name: testClothingName
+      id: testclothingname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingName
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingName
+
+    - name: testClothingPrice
+      id: testclothingprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingPrice
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingPrice
+
+    - name: testClothingDescription
+      id: testclothingdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingDescription
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingDescription
+
+    - name: testClothingSize
+      id: testclothingsize
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingSize
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingSize
+
+    - name: testClothingMaterial
+      id: testclothingmaterial
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingMaterial
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingMaterial
+
+    - name: testClothingDiscountedPriceForSmallOrMedium
+      id: testclothingdiscountedpricesmallormedium
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingDiscountedPriceForSmallOrMedium
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingDiscountedPriceForSmallOrMedium
+
+    - name: testClothingDiscountedPriceForLargeOrLarger
+      id: testclothingdiscountedpricelargeorlarger
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testClothingDiscountedPriceForLargeOrLarger
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testClothingDiscountedPriceForLargeOrLarger
+
+    - name: testSetClothingName
+      id: testsetclothingname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetClothingName
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testSetClothingName
+
+    - name: testSetClothingPrice
+      id: testsetclothingprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetClothingPrice
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testSetClothingPrice
+
+    - name: testSetClothingDescription
+      id: testsetclothingdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetClothingDescription
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testSetClothingDescription
+
+    - name: testSetClothingSize
+      id: testsetclothingsize
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetClothingSize
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testSetClothingSize
+
+    - name: testSetClothingMaterial
+      id: testsetclothingmaterial
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetClothingMaterial
+        setup-command: ''
+        command: gradle test --tests ClothingTest.testSetClothingMaterial
+
+    # Electronic tests
+    - name: testElectronicName
+      id: testelectronicname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testElectronicName
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testElectronicName
+
+    - name: testElectronicPrice
+      id: testelectronicprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testElectronicPrice
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testElectronicPrice
+
+    - name: testElectronicDescription
+      id: testelectronicdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testElectronicDescription
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testElectronicDescription
+
+    - name: testElectronicWarrantyPeriod
+      id: testelectronicwarrantyperiod
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testElectronicWarrantyPeriod
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testElectronicWarrantyPeriod
+
+    - name: testElectronicDiscountedPrice
+      id: testelectronicdiscountedprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testElectronicDiscountedPrice
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testElectronicDiscountedPrice
+
+    - name: testSetElectronicName
+      id: testsetelectronicname
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetElectronicName
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testSetElectronicName
+
+    - name: testSetElectronicPrice
+      id: testsetelectronicprice
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetElectronicPrice
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testSetElectronicPrice
+
+    - name: testSetElectronicDescription
+      id: testsetelectronicdescription
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetElectronicDescription
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testSetElectronicDescription
+
+    - name: testSetElectronicWarrantyPeriod
+      id: testsetelectronicwarrantyperiod
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testSetElectronicWarrantyPeriod
+        setup-command: ''
+        command: gradle test --tests ElectronicTest.testSetElectronicWarrantyPeriod
+
+    # Polymorphism test
+    - name: testPolymorphism
+      id: testpolymorphism
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testPolymorphism
+        setup-command: ''
+        command: gradle test --tests PolymorphismTest.testPolymorphism
+
+    # Autograding Reporter
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTPRODUCTNAME_RESULTS: "${{steps.testproductname.outputs.result}}"
+        TESTPRODUCTPRICE_RESULTS: "${{steps.testproductprice.outputs.result}}"
+        TESTPRODUCTDESCRIPTION_RESULTS: "${{steps.testproductdescription.outputs.result}}"
+        TESTPRODUCTDISCOUNTEDPRICE_RESULTS: "${{steps.testproductdiscountedprice.outputs.result}}"
+        TESTSETPRODUCTNAME_RESULTS: "${{steps.testsetproductname.outputs.result}}"
+        TESTSETPRODUCTPRICE_RESULTS: "${{steps.testsetproductprice.outputs.result}}"
+        TESTSETPRODUCTDESCRIPTION_RESULTS: "${{steps.testsetproductdescription.outputs.result}}"
+        TESTCLOTHINGNAME_RESULTS: "${{steps.testclothingname.outputs.result}}"
+        TESTCLOTHINGPRICE_RESULTS: "${{steps.testclothingprice.outputs.result}}"
+        TESTCLOTHINGDESCRIPTION_RESULTS: "${{steps.testclothingdescription.outputs.result}}"
+        TESTCLOTHINGSIZE_RESULTS: "${{steps.testclothingsize.outputs.result}}"
+        TESTCLOTHINGMATERIAL_RESULTS: "${{steps.testclothingmaterial.outputs.result}}"
+        TESTCLOTHINGDISCOUNTEDPRICESMALLORMEDIUM_RESULTS: "${{steps.testclothingdiscountedpricesmallormedium.outputs.result}}"
+        TESTCLOTHINGDISCOUNTEDPRICELARGEORLARGER_RESULTS: "${{steps.testclothingdiscountedpricelargeorlarger.outputs.result}}"
+        TESTSETCLOTHINGNAME_RESULTS: "${{steps.testsetclothingname.outputs.result}}"
+        TESTSETCLOTHINGPRICE_RESULTS: "${{steps.testsetclothingprice.outputs.result}}"
+        TESTSETCLOTHINGDESCRIPTION_RESULTS: "${{steps.testsetclothingdescription.outputs.result}}"
+        TESTSETCLOTHINGSIZE_RESULTS: "${{steps.testsetclothingsize.outputs.result}}"
+        TESTSETCLOTHINGMATERIAL_RESULTS: "${{steps.testsetclothingmaterial.outputs.result}}"
+        TESTELECTRONICNAME_RESULTS: "${{steps.testelectronicname.outputs.result}}"
+        TESTELECTRONICPRICE_RESULTS: "${{steps.testelectronicprice.outputs.result}}"
+        TESTELECTRONICDESCRIPTION_RESULTS: "${{steps.testelectronicdescription.outputs.result}}"
+        TESTELECTRONICWARRANTYPERIOD_RESULTS: "${{steps.testelectronicwarrantyperiod.outputs.result}}"
+        TESTELECTRONICDISCOUNTEDPRICE_RESULTS: "${{steps.testelectronicdiscountedprice.outputs.result}}"
+        TESTSETELECTRONICNAME_RESULTS: "${{steps.testsetelectronicname.outputs.result}}"
+        TESTSETELECTRONICPRICE_RESULTS: "${{steps.testsetelectronicprice.outputs.result}}"
+        TESTSETELECTRONICDESCRIPTION_RESULTS: "${{steps.testsetelectronicdescription.outputs.result}}"
+        TESTSETELECTRONICWARRANTYPERIOD_RESULTS: "${{steps.testsetelectronicwarrantyperiod.outputs.result}}"
+        TESTPOLYMORPHISM_RESULTS: "${{steps.testpolymorphism.outputs.result}}"
+      with:
+        runners: testproductname, testproductprice, testproductdescription, testproductdiscountedprice, testsetproductname, testsetproductprice, testsetproductdescription, testclothingname, testclothingprice, testclothingdescription, testclothingsize, testclothingmaterial, testclothingdiscountedpricesmallormedium, testclothingdiscountedpricelargeorlarger, testsetclothingname, testsetclothingprice, testsetclothingdescription, testsetclothingsize, testsetclothingmaterial, testelectronicname, testelectronicprice, testelectronicdescription, testelectronicwarrantyperiod, testelectronicdiscountedprice, testsetelectronicname, testsetelectronicprice, testsetelectronicdescription, testsetelectronicwarrantyperiod, testpolymorphism
