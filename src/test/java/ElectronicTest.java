@@ -35,8 +35,8 @@ class ElectronicTest {
 
         // Check if the discounted price is one of 0%, 10%, or 20% off the original price
         assertTrue(Math.abs(discountedPrice - 44.10) <= DELTA || 
-                   Math.abs(discountedPrice == (44.10 * 0.90)) <= DELTA || 
-                    Math.abs(discountedPrice == (44.10 * 0.80)) <= DELTA, 
+                   Math.abs(discountedPrice - (44.10 * 0.90)) <= DELTA || 
+                    Math.abs(discountedPrice - (44.10 * 0.80)) <= DELTA, 
                    "Discounted price should be one of 44.10, 39.69 (10%), or 35.28 (20%)");
     }
 
