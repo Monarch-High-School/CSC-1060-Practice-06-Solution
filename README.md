@@ -38,7 +38,7 @@ Remember that the subclasses point upward to the base class. Also notice how enu
 ### `Clothing`
 | Code Segment                                               |            Effect / Return Value       |
 | :---                                                       |     :---                               |
-| `Clothing.SIZE.SMALL, Clothing.SIZE.MEDIUM, Clothing.SIZE.LARGE, Clothing.SIZE.X-LARGE, Clothing.SIZE.XX-LARGE` | This code doesn't do anything. It just illustrates the size enumeration. | 
+| `Clothing.SIZE.SMALL, Clothing.SIZE.MEDIUM, Clothing.SIZE.LARGE, Clothing.SIZE.X_LARGE, Clothing.SIZE.XX_LARGE` | This code doesn't do anything. It just illustrates the size enumeration. | 
 | `Clothing c = new Clothing("Fancy Pants", 78.99, "Comfortable bedazzled pants", Clothing.SIZE.MEDIUM, "Wool");` | Creates a new `Clothing` object with the values indicated.|
 | `c.getName();` | Returns `"Fancy Pants"` |
 | `c.getPrice();` | Returns `78.99` |
@@ -61,15 +61,16 @@ Remember that the subclasses point upward to the base class. Also notice how enu
 Ensure that the following code works as well:
 ```java
 Product [] inventory = new Product [] {p, c, e}; 
-for (Product p : inventory) {
-    System.out.println("Name: " + p.getName());
-    System.out.println("Description: " + p.getDescription());
-    System.out.println("Price: " + p.getPrice());
-    System.out.println("Discounted Price 1: " + p.getDiscountedPrice());
-    System.out.println("Discounted Price 2: " + p.getDiscountedPrice());
-    System.out.println("Discounted Price 3: " + p.getDiscountedPrice());
+for (Product prod : inventory) {
+    System.out.println("Name: " + prod.getName());
+    System.out.println("Description: " + prod.getDescription());
+    System.out.println("Price: " + prod.getPrice());
+    System.out.println("Discounted Price 1: " + prod.getDiscountedPrice());
+    System.out.println("Discounted Price 2: " + prod.getDiscountedPrice());
+    System.out.println("Discounted Price 3: " + prod.getDiscountedPrice());
+    System.out.println()
 }
 ```
 
 ## Unit Tests
-Ensure that the unit tests pass by running the unit test files in `src/test/java/`.
+Ensure that the unit tests pass by running the unit test files in `src/test/java/`. Recommendation - rename the units tests without the `.java` extension. Then, as you implement the classes, rename the files back. This will ensure you are only focusing on the tests for which you have classes.
